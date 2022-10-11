@@ -8,19 +8,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_launcher_web"
+        android:background="@color/white"
+        android:contentDescription="@string/login"
+        />
+
     <EditText
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="30dp"
         android:id="@+id/usernameLogin"
         android:layout_width="365dp"
         android:layout_height="50dp"
-        android:hint="@string/phone_number"
+        android:hint="@string/username"
         android:autofillHints=""
-        android:inputType="phone"
+        android:textColorHint="#757575"
         android:layout_gravity="center"/>
 
 
     <EditText
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/passwordLogin"
         android:layout_width="365dp"
         android:layout_height="50dp"
@@ -35,7 +45,7 @@
 
 
     <Button
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="35dp"
         android:id="@+id/LoginBtn"
         android:layout_width="125dp"
         android:layout_height="61dp"
@@ -49,7 +59,7 @@
         android:layout_height="70dp"
         android:layout_gravity="center"
         android:orientation="horizontal"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="35dp">
         <Button
             android:id="@+id/ForgotPWBtn"
             android:layout_width="125dp"
@@ -68,7 +78,7 @@
                 android:textSize="16sp"
                 app:layout_constraintVertical_bias="0.861"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="50dp"
+                android:layout_marginStart="50dp"
 
                 />
     </LinearLayout>

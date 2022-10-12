@@ -6,19 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.445" />
-
     <Button
         android:id="@+id/FindFoodButton"
-        android:layout_width="275dp"
+        android:layout_width="200dp"
         android:layout_height="55dp"
         android:text="@string/FindRestaurants"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,18 +20,18 @@
 
     <Button
         android:id="@+id/ManageAccount"
-        android:layout_width="275dp"
+        android:layout_width="200dp"
         android:layout_height="55dp"
         android:text="@string/ManageAccount"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.45"
+        app:layout_constraintVertical_bias="0.4"
         />
 
     <Button
-        android:id="@+id/SignOut"
+        android:id="@+id/SignOutBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/SignOut"
@@ -49,20 +39,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.8"
+        app:layout_constraintVertical_bias="0.75"
         />
 
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_marginTop="35dp"
         android:background="@color/yellow"
-        android:stretchMode="columnWidth"
-        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         >
         <ImageView
-            android:layout_marginStart="60dp"
+            android:id="@+id/NavBarSearch"
+            android:layout_marginStart="55dp"
             android:layout_width="70dp"
             android:layout_height="match_parent"
             android:padding="10dp"
@@ -70,20 +59,24 @@
             android:contentDescription="@string/login"
             />
 
+
         <ImageView
+            android:id="@+id/NavBarHome"
             android:layout_width="70dp"
             android:layout_height="match_parent"
             android:padding="5dp"
             android:layout_gravity="center"
             android:src="@drawable/home_icon_silhouette"
             android:contentDescription="@string/login"
+            android:onClick="toMain"
             />
 
         <ImageView
+            android:id="@+id/NavBarProfile"
             android:layout_width="70dp"
             android:layout_height="match_parent"
             android:padding="5dp"
-            android:layout_marginEnd="70dp"
+            android:layout_marginEnd="55dp"
             android:src="@drawable/profile"
             android:contentDescription="@string/login"
             />

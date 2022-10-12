@@ -25,4 +25,8 @@
         <item>Airport 3</item>
         <item>Airport 4</item>
     </string-array>
+    <string name="accName">Account Name</string>
+    <string name="firstLastName">Joe Bob</string>
+    <string name="Edit">EDIT</string>
+    <string name="profilePic">Profile Picture</string>
 </resources>

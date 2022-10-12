@@ -52,45 +52,41 @@
         app:layout_constraintVertical_bias="0.8"
         />
 
-    <LinearLayout
+    <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:layout_marginTop="35dp"
-        android:background="@color/gray"
+        android:background="@color/yellow"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         >
-        <Button
-            android:id="@+id/ForgotPWBtn"
-            android:layout_width="125dp"
-            android:layout_height="61dp"
-            android:text="@string/forgot"
-            android:textSize="16sp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="19dp"
-            android:layout_marginEnd="25dp"
+        <ImageView
+            android:layout_marginStart="60dp"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:src="@drawable/search_svgrepo_com"
+            android:contentDescription="@string/login"
             />
 
         <ImageView
             android:layout_width="70dp"
             android:layout_height="match_parent"
             android:padding="5dp"
-            android:gravity="center_horizontal"
+            android:layout_gravity="center"
             android:src="@drawable/home_icon_silhouette"
             android:contentDescription="@string/login"
             />
 
-        <Button
-            android:id="@+id/SignupBtn"
-            android:layout_width="125dp"
-            android:layout_height="61dp"
-            android:text="@string/SignupLn"
-            android:textSize="16sp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="25dp"
-
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:layout_marginEnd="70dp"
+            android:src="@drawable/profile"
+            android:contentDescription="@string/login"
             />
-    </LinearLayout>
+    </GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

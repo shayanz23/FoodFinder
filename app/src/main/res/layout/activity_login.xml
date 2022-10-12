@@ -26,7 +26,8 @@
         android:hint="@string/username"
         android:autofillHints=""
         android:textColorHint="#757575"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:inputType="" />
 
 
     <EditText

@@ -13,7 +13,7 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        Button toMain = findViewById(R.id.CreateAccountBtn);
+        Button toMain = findViewById(R.id.CreateAccountRegBtn);
         toMain.setOnClickListener(view -> {
             Intent intent = new Intent(this, MainActivity.class);
             intent.putExtra("loggedIn", true);

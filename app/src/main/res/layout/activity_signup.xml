@@ -21,7 +21,7 @@
 
 
     <EditText
-        android:id="@+id/firstname"
+        android:id="@+id/firstnameReg"
         android:layout_width="180dp"
         android:layout_height="50dp"
         android:layout_below="@+id/registration"
@@ -32,11 +32,11 @@
         android:textColorHint="#757575" />
 
     <EditText
-        android:id="@+id/lastname"
+        android:id="@+id/lastnameReg"
         android:layout_width="180dp"
         android:layout_height="50dp"
         android:layout_below="@id/registration"
-        android:layout_toEndOf="@+id/firstname"
+        android:layout_toEndOf="@+id/firstnameReg"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/last_name"
@@ -45,18 +45,18 @@
 
     <EditText
         android:layout_centerHorizontal="true"
-        android:id="@+id/phoneNum"
-        android:layout_below="@+id/firstname"
+        android:id="@+id/phoneNumReg"
+        android:layout_below="@+id/firstnameReg"
         android:layout_width="365dp"
         android:layout_height="50dp"
         android:hint="@string/phone_number" />
 
     <EditText
         android:layout_centerHorizontal="true"
-        android:id="@+id/email"
+        android:id="@+id/emailReg"
         android:layout_width="365dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/phoneNum"
+        android:layout_below="@+id/phoneNumReg"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/email_address"
@@ -65,8 +65,8 @@
 
     <EditText
         android:layout_centerHorizontal="true"
-        android:id="@+id/password"
-        android:layout_below="@+id/email"
+        android:id="@+id/passwordReg"
+        android:layout_below="@+id/emailReg"
         android:layout_width="365dp"
         android:layout_height="50dp"
         android:autofillHints=""
@@ -79,10 +79,10 @@
 
     <EditText
         android:layout_centerHorizontal="true"
-        android:id="@+id/passwordRepeat"
+        android:id="@+id/passwordRepeatReg"
         android:layout_width="365dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/password"
+        android:layout_below="@+id/passwordReg"
         android:ems="10"
         android:hint="@string/confirm_password"
         android:inputType="textPassword"
@@ -93,13 +93,13 @@
         android:id="@+id/hint"
         android:layout_width="365dp"
         android:layout_height="100dp"
-        android:layout_below="@+id/passwordRepeat"
+        android:layout_below="@+id/passwordRepeatReg"
         android:text="@string/a_valid_password_has_at_least_8_characters_and_includes_at_lease_one_uppercase_letter_one_lowercase_letter_one_number_and_one_special_character"
         android:textSize="15sp"
         app:layout_constraintVertical_bias="0.758" />
 
     <Button
-        android:id="@+id/CreateAccountBtn"
+        android:id="@+id/CreateAccountRegBtn"
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:layout_below="@+id/hint"

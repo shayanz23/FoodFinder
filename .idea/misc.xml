@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/vinod/FoodFinder/app/src/main/res/layout/activity_findfood.xml" value="0.22" />
+        <entry key="..\:/Users/vinod/FoodFinder/app/src/main/res/layout/activity_gpsactivity.xml" value="0.1" />
         <entry key="..\:/Users/vinod/FoodFinder/app/src/main/res/layout/activity_manageaccount.xml" value="0.33" />
+        <entry key="..\:/Users/vinod/FoodFinder/app/src/main/res/layout/activity_recent_reviews.xml" value="0.2" />
       </map>
     </option>
   </component>

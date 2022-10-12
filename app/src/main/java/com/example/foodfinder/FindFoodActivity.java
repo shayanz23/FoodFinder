@@ -20,4 +20,10 @@ public class FindFoodActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void toGPS(View view) {
+        Intent intent = new Intent(this, GPSActivity.class);
+        intent.putExtra("loggedIn", true);
+        startActivity(intent);
+    }
+
 }

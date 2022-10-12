@@ -13,6 +13,84 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.445" />
+
+    <Button
+        android:id="@+id/FindFoodButton"
+        android:layout_width="275dp"
+        android:layout_height="55dp"
+        android:text="@string/FindRestaurants"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.25"
+        />
+
+    <Button
+        android:id="@+id/ManageAccount"
+        android:layout_width="275dp"
+        android:layout_height="55dp"
+        android:text="@string/ManageAccount"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.45"
+        />
+
+    <Button
+        android:id="@+id/SignOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/SignOut"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.8"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="35dp"
+        android:background="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        >
+        <Button
+            android:id="@+id/ForgotPWBtn"
+            android:layout_width="125dp"
+            android:layout_height="61dp"
+            android:text="@string/forgot"
+            android:textSize="16sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="19dp"
+            android:layout_marginEnd="25dp"
+            />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:gravity="center_horizontal"
+            android:src="@drawable/home_icon_silhouette"
+            android:contentDescription="@string/login"
+            />
+
+        <Button
+            android:id="@+id/SignupBtn"
+            android:layout_width="125dp"
+            android:layout_height="61dp"
+            android:text="@string/SignupLn"
+            android:textSize="16sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="25dp"
+
+            />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

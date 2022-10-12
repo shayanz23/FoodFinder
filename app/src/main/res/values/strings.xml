@@ -14,4 +14,7 @@
     <string name="forgot">Forgot P/W</string>
     <string name="SignupLn">Sign Up</string>
     <string name="Icon">FoodFinder Icon</string>
+    <string name="FindRestaurants">Find Food</string>
+    <string name="ManageAccount">Manage Account</string>
+    <string name="SignOut">Sign Out</string>
 </resources>

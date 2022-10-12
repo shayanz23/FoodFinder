@@ -17,4 +17,12 @@
     <string name="FindRestaurants">Find Food</string>
     <string name="ManageAccount">Manage Account</string>
     <string name="SignOut">Sign Out</string>
+    <string name="gpsBtn">GPS</string>
+    <string name="searchBar">Search</string>
+    <string-array name="airportSearch">
+        <item>Airport 1</item>
+        <item>Airport 2</item>
+        <item>Airport 3</item>
+        <item>Airport 4</item>
+    </string-array>
 </resources>

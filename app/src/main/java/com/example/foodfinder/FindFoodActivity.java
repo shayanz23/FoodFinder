@@ -11,6 +11,4 @@ public class FindFoodActivity extends AppCompatActivity {
         setContentView(R.layout.activity_findfood);
 
     }
-
-
 }

@@ -39,4 +39,15 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("loggedIn", loggedIn);
         startActivity(intent);
     }
+
+    public void toFindFood(View view){
+        Intent intent = new Intent(this, FindFoodActivity.class);
+        intent.putExtra("loggedIn", loggedIn);
+        startActivity(intent);
+    }
+    public void toManageAccount(View view){
+        Intent intent = new Intent(this, ManageAccountActivity.class);
+        intent.putExtra("loggedIn", loggedIn);
+        startActivity(intent);
+    }
 }

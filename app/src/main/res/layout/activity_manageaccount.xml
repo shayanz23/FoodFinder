@@ -140,4 +140,17 @@
         app:layout_constraintTop_toBottomOf="@+id/profilePicture"
         app:layout_constraintVertical_bias="0.044" />
 
+    <Button
+        android:id="@+id/toRecentReviews"
+        android:layout_width="170dp"
+        android:layout_height="44dp"
+        android:text="@string/recentReviews"
+        android:onClick="toRecentReviews"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accountName"
+        app:layout_constraintVertical_bias="0.925" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

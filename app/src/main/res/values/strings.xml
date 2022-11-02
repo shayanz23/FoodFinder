@@ -29,4 +29,29 @@
     <string name="firstLastName">Joe Bob</string>
     <string name="Edit">EDIT</string>
     <string name="profilePic">Profile Picture</string>
+    <string name="recentReviews">Recent Reviews</string>
+    <string name="backBtn">Back</string>
+
+    <string-array name="restaurants">
+        <item>McDonald\'s</item>
+        <item>Tim Hortons</item>
+        <item>A&amp;W</item>
+        <item>Chipotle</item>
+        <item>Dairy Queen</item>
+        <item>New York Fries</item>
+    </string-array>
+
+    <string-array name="menuItems">
+        <item>Menu Item 1</item>
+        <item>Menu Item 2</item>
+        <item>Menu Item 3</item>
+        <item>Menu Item 4</item>
+        <item>Menu Item 5</item>
+    </string-array>
+
+    <string name="reviewBtn">Reviews</string>
+    <string name="restaurantImageDescription">Placeholder image for restaurant</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

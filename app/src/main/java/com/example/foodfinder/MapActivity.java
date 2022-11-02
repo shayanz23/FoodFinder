@@ -1,17 +1,17 @@
 package com.example.foodfinder;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
+public class MapActivity extends AppCompatActivity {
 
-public class ManageAccountActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manageaccount);
-
+        setContentView(R.layout.activity_gpsactivity);
     }
 
     public void toMain(View view) {
@@ -19,12 +19,4 @@ public class ManageAccountActivity extends AppCompatActivity {
         intent.putExtra("loggedIn", true);
         startActivity(intent);
     }
-
-    public void toRecentReviews(View view) {
-        Intent intent = new Intent(this, RecentReviewsActivity.class);
-        intent.putExtra("loggedIn", true);
-        startActivity(intent);
-    }
-
-
 }

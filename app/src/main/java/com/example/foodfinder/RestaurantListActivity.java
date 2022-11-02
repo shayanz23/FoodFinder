@@ -18,11 +18,15 @@ public class RestaurantListActivity extends AppCompatActivity {
         Fragment restaurantListFragment = new RestaurantListFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.ctnFragment, restaurantListFragment);
+        fragmentTransaction.replace(R.id.restaurantListFragment, restaurantListFragment);
         fragmentTransaction.commit();
     }
 
     public void backBtnOnClick(View view) {
-        finish();
+        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+            getSupportFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
     }
 }

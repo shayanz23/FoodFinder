@@ -2,7 +2,6 @@ package com.example.foodfinder;
 
 import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.ListFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 public class RestaurantListFragment extends ListFragment {
 
@@ -39,7 +37,15 @@ public class RestaurantListFragment extends ListFragment {
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-        Toast.makeText(getActivity().getBaseContext(), restaurantNames[position] + " position " + position + " id " + id, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getActivity().getBaseContext(), restaurantNames[position] + " position " + position + " id " + id, Toast.LENGTH_SHORT).show();
+        RestaurantFragment restaurantFragment = new RestaurantFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("name", restaurantNames[position]);
+        restaurantFragment.setArguments(bundle);
+        getActivity().getSupportFragmentManager().beginTransaction()
+                .addToBackStack(null)
+                .replace(R.id.restaurantListFragment, restaurantFragment)
+                .commit();
     }
 
 }

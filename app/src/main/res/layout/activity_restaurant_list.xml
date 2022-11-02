@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.05" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/ctnFragment"
+        android:id="@+id/restaurantListFragment"
         android:layout_width="323dp"
         android:layout_height="477dp"
         app:layout_constraintBottom_toBottomOf="parent"

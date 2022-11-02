@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class GPSActivity extends AppCompatActivity {
+public class MapActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

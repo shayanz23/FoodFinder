@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void toFindFood(View view){
-        Intent intent = new Intent(this, RestaurantListActivity.class);
+        Intent intent = new Intent(this, FindFoodActivity.class);
         intent.putExtra("loggedIn", loggedIn);
         startActivity(intent);
     }

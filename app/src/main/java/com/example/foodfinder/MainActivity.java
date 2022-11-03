@@ -8,12 +8,24 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class MainActivity extends AppCompatActivity {
+
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
+
     boolean loggedIn = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // get the instance of the Firebase database
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        // get the reference to the JSON tree
+        databaseReference = firebaseDatabase.getReference();
 
         try {
             loggedIn = getIntent().getExtras().getBoolean("loggedIn");

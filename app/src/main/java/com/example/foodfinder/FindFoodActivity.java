@@ -30,7 +30,7 @@ public class FindFoodActivity extends AppCompatActivity implements OnMapReadyCal
 
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
-        LatLng sydney = new LatLng(49.25010954461797, -123.00275621174804);
+        LatLng sydney = new LatLng(-34, 151);
         googleMap.addMarker(new MarkerOptions().position(sydney).title("Sydney"));
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 15));
     }

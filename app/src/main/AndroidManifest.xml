@@ -18,7 +18,7 @@
         >
 
         <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBVhUzKV7YZbnI7HGHyN8rfZ2_falEkeiQ"/>
+            android:value="AIzaSyCe6iS6KAMoGFR0Apt27biTV4jKqgWrkJI"/>
         <activity
             android:name=".RestaurantListActivity"
             android:exported="false">

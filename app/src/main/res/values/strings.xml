@@ -19,6 +19,7 @@
     <string name="SignOut">Sign Out</string>
     <string name="gpsBtn">GPS</string>
     <string name="searchBar">Search</string>
+    <string name="googlemapsAPI">https://maps.googleapis.com/maps/api/timezone/json?location=39.6034810,-119.6822510&amp;timestamp=1331161200&amp;key=AIzaSyCe6iS6KAMoGFR0Apt27biTV4jKqgWrkJI</string>
     <string-array name="airportSearch">
         <item>Airport 1</item>
         <item>Airport 2</item>

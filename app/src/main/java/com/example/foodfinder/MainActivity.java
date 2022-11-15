@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
 
     boolean loggedIn = false;
+    String firstName, lastName, phoneNumber, emailAddress, password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
         }
+
+        firstName = getIntent().getExtras().getString("firstName");
 
         Button toLogin = findViewById(R.id.SignOutBtn);
         toLogin.setOnClickListener(view -> {

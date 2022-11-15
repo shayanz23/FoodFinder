@@ -9,8 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -31,12 +34,17 @@ public class LoginActivity extends AppCompatActivity {
 
         edtUsername = findViewById(R.id.usernameLogin);
         edtPassword = findViewById(R.id.passwordLogin);
+        username = edtUsername.getText().toString().trim();
+        password = edtPassword.getText().toString().trim();
 
         Button toMain = findViewById(R.id.LoginBtn);
         toMain.setOnClickListener(view -> {
-            Intent intent = new Intent(this, MainActivity.class);
-            intent.putExtra("loggedIn", true);
-            startActivity(intent);
+
+            if (authenticateUser()) {
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.putExtra("loggedIn", true);
+                startActivity(intent);
+            }
         });
 
         Button toSignup = findViewById(R.id.SignupBtn);
@@ -58,14 +66,36 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "Please enter a password", Toast.LENGTH_LONG).show();
             return false;
         }
-        return true;
-    }
 
-    protected void login() {
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
 
-    }
+        databaseReference.child("Users").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                System.out.println("Comparing " + username + " with ");
+                boolean match = false;
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    User user = snapshot.getValue(User.class);
+                    String name = user.getFirstName() + " " + user.getLastName();
+                    System.out.println(name);
+                    if (username.equals(name)
+                    && password.equals(user.getPassword())) {
+                        match = true;
+                        Toast.makeText(LoginActivity.this, "Access granted", Toast.LENGTH_LONG).show();
+                    }
+                }
+                if(!match) {
+                    Toast.makeText(LoginActivity.this, "Access denied", Toast.LENGTH_LONG).show();
+                }
+            }
 
-    protected void signup() {
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
 
+            }
+        });
+
+        return false;
     }
 }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -41,7 +42,9 @@ public class SignupActivity extends AppCompatActivity {
             String enterPassword = edtEnterPassword.getText().toString().trim();
             String confirmPassword = edtConfirmPassword.getText().toString().trim();
 
-            if (enterPassword.equals(confirmPassword)) {
+            if (!enterPassword.trim().isEmpty() &&
+                    !confirmPassword.trim().isEmpty() &&
+                    enterPassword.equals(confirmPassword)) {
                 Intent intent = new Intent(this, MainActivity.class);
                 // Putting signup values into intent
                 EditText edtFirstName, edtLastName, edtPhoneNumber, edtEmailAddress;
@@ -74,12 +77,7 @@ public class SignupActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(Object o) {
                         Toast.makeText(SignupActivity.this, "Account created", Toast.LENGTH_LONG).show();
-                        edtFirstName.setText("");
-                        edtLastName.setText("");
-                        edtPhoneNumber.setText("");
-                        edtEmailAddress.setText("");
-                        edtEnterPassword.setText("");
-                        edtConfirmPassword.setText("");
+                        startActivity(intent);
                     }
                 });
 
@@ -87,12 +85,12 @@ public class SignupActivity extends AppCompatActivity {
                 setValueTask.addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
+                        Log.d(e.toString(), e.toString());
                         Toast.makeText(SignupActivity.this, e.toString(), Toast.LENGTH_LONG).show();
                     }
                 });
 
 
-                startActivity(intent);
             } else {
                 Toast.makeText(this, "Passwords do not match!", Toast.LENGTH_LONG).show();
             }

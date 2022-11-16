@@ -38,8 +38,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
-        firstName = getIntent().getExtras().getString("firstName");
-
         Button toLogin = findViewById(R.id.SignOutBtn);
         toLogin.setOnClickListener(view -> {
             loggedIn = false;

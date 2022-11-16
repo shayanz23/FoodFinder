@@ -21,6 +21,7 @@ public class LoginActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private EditText edtUsername, edtPassword;
     private String username, password;
+    private boolean match;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +58,7 @@ public class LoginActivity extends AppCompatActivity {
     protected boolean authenticateUser() {
         username = edtUsername.getText().toString().trim();
         password = edtPassword.getText().toString().trim();
+        boolean authMatch = false;
 
         if(TextUtils.isEmpty(username)) {
             Toast.makeText(this, "Please enter a username", Toast.LENGTH_LONG).show();
@@ -74,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 System.out.println("Comparing " + username + " with ");
-                boolean match = false;
+                //boolean match = false;
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     User user = snapshot.getValue(User.class);
                     String name = user.getFirstName() + " " + user.getLastName();
@@ -88,6 +90,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(!match) {
                     Toast.makeText(LoginActivity.this, "Access denied", Toast.LENGTH_LONG).show();
                 }
+
             }
 
             @Override
@@ -96,6 +99,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        return false;
+        return match;
     }
 }

@@ -54,5 +54,6 @@
     <string name="restaurantImageDescription">Placeholder image for restaurant</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="get_location">get Location</string>
 
 </resources>

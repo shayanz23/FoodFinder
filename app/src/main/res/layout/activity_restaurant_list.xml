@@ -6,6 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".RestaurantListActivity">
 
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/secondaryColor"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/NavBarSearch"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="55dp"
+            android:contentDescription="@string/login"
+            android:padding="10dp"
+            android:src="@drawable/search_svgrepo_com" />
+
+
+        <ImageView
+            android:id="@+id/NavBarHome"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:contentDescription="@string/login"
+            android:onClick="toMain"
+            android:padding="5dp"
+            android:src="@drawable/home_icon_silhouette" />
+
+        <ImageView
+            android:id="@+id/NavBarProfile"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="55dp"
+            android:contentDescription="@string/login"
+            android:padding="5dp"
+            android:src="@drawable/profile" />
+    </GridLayout>
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"

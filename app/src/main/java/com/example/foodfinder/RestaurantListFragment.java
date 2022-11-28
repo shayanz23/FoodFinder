@@ -1,5 +1,6 @@
 package com.example.foodfinder;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.ListFragment;
@@ -11,10 +12,14 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+
 public class RestaurantListFragment extends ListFragment {
 
     RecyclerView recyclerView;
     String[] restaurantNames;
+    ArrayAdapter<String> adapter;
+
 
     public RestaurantListFragment() {
         // Required empty public constructor
@@ -30,7 +35,7 @@ public class RestaurantListFragment extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_restaurant_list, container, false);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(inflater.getContext(), android.R.layout.simple_list_item_1, restaurantNames);
+            adapter = new ArrayAdapter<>(inflater.getContext(), android.R.layout.simple_list_item_1, restaurantNames);
         setListAdapter(adapter);
         return view;
     }
@@ -47,5 +52,6 @@ public class RestaurantListFragment extends ListFragment {
                 .replace(R.id.restaurantListFragment, restaurantFragment)
                 .commit();
     }
+
 
 }

@@ -34,12 +34,12 @@
     <string name="backBtn">Back</string>
 
     <string-array name="restaurants">
-        <item>McDonald\'s</item>
-        <item>Tim Hortons</item>
-        <item>A&amp;W</item>
-        <item>Chipotle</item>
-        <item>Dairy Queen</item>
-        <item>New York Fries</item>
+        <item>McDonald\'s \nRatings: 4.2</item>
+        <item>Tim Hortons \nRatings: 4.1</item>
+        <item>A&amp;W \nRatings: 3.5</item>
+        <item>Chipotle \nRatings: 3.1</item>
+        <item>Dairy Queen \nRatings: 4.0</item>
+        <item>New York Fries \nRatings: 4.5</item>
     </string-array>
 
     <string-array name="menuItems">

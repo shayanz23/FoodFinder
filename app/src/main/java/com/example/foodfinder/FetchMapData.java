@@ -2,7 +2,6 @@ package com.example.foodfinder;
 
 import android.os.AsyncTask;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -13,14 +12,13 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
-public class FetchData extends AsyncTask<Object, String, String> {
+public class FetchMapData extends AsyncTask<Object, String, String> {
     String googleNearbyPlacesData;
     GoogleMap googleMap;
     String url;
 
     @Override
     protected void onPostExecute(String s) {
-        System.out.println("********************onPostExecute: ");
         try {
             JSONObject jsonObject = new JSONObject(s);
             JSONArray jsonArray = jsonObject.getJSONArray("results");

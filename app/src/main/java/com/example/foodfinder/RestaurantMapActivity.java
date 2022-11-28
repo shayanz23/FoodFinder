@@ -121,13 +121,12 @@ public class RestaurantMapActivity extends AppCompatActivity implements OnMapRea
                 stringBuilder.append("&key=AIzaSyAkGQa4TjhJcoDDbgtZTbI02Um4VgJOUCs");
 
                 String url = stringBuilder.toString();
-                System.out.println(url);
                 Object dataFetch[] = new Object[2];
                 dataFetch[0] = mMap;
                 dataFetch[1] = url;
 
-                FetchData fetchData = new FetchData();
-                fetchData.execute(dataFetch);
+                FetchMapData fetchMapData = new FetchMapData();
+                fetchMapData.execute(dataFetch);
             }
         });
 

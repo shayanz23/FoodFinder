@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void toFindFood(View view){
-        Intent intent = new Intent(this, FindFoodActivity.class);
+        Intent intent = new Intent(this, RestaurantListActivity.class);
         startActivity(intent);
     }
     public void toManageAccount(View view){

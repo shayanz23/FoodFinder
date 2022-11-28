@@ -43,7 +43,7 @@
             android:src="@drawable/profile" />
     </GridLayout>
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/restBackBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="backBtnOnClick"
@@ -51,6 +51,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <Button
+        android:id="@+id/toMapBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="toMap"
+        android:text="@string/map"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.05" />

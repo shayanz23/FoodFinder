@@ -4,7 +4,6 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 
@@ -12,15 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
-import android.os.Bundle;
 import android.widget.Spinner;
-import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationResult;
@@ -32,15 +24,10 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.tasks.Task;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-public class FindFoodActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class RestaurantMapActivity extends AppCompatActivity implements OnMapReadyCallback {
     SupportMapFragment mapFragment;
     private FusedLocationProviderClient fusedLocationProviderClient;
     private double mLatitude;
@@ -56,7 +43,7 @@ public class FindFoodActivity extends AppCompatActivity implements OnMapReadyCal
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_findfood);
+        setContentView(R.layout.activity_restaurant_map);
 
         fusedLocationProviderClient =
                 LocationServices.getFusedLocationProviderClient(this.getApplicationContext());

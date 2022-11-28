@@ -69,7 +69,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FindFoodActivity"
+            android:name=".RestaurantMapActivity"
             android:exported="true"
             android:parentActivityName=".MainActivity">
             <intent-filter>

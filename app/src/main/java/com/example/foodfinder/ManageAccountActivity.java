@@ -16,13 +16,11 @@ public class ManageAccountActivity extends AppCompatActivity {
 
     public void toMain(View view) {
         Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("loggedIn", true);
         startActivity(intent);
     }
 
     public void toRecentReviews(View view) {
         Intent intent = new Intent(this, RecentReviewsActivity.class);
-        intent.putExtra("loggedIn", true);
         startActivity(intent);
     }
 

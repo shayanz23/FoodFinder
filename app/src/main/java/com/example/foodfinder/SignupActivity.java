@@ -47,18 +47,21 @@ public class SignupActivity extends AppCompatActivity {
                     enterPassword.equals(confirmPassword)) {
                 Intent intent = new Intent(this, MainActivity.class);
                 // Putting signup values into intent
-                EditText edtFirstName, edtLastName, edtPhoneNumber, edtEmailAddress;
+                EditText edtUsername, edtFirstName, edtLastName, edtPhoneNumber, edtEmailAddress;
+                edtUsername = findViewById(R.id.usernameReg);
                 edtFirstName = findViewById(R.id.firstnameReg);
                 edtLastName = findViewById(R.id.lastnameReg);
                 edtPhoneNumber = findViewById(R.id.phoneNumReg);
                 edtEmailAddress = findViewById(R.id.emailReg);
 
-                String firstName, lastName, phoneNumber, emailAddress;
+                String username, firstName, lastName, phoneNumber, emailAddress;
+                username = edtUsername.getText().toString().trim();
                 firstName = edtFirstName.getText().toString().trim();
                 lastName = edtLastName.getText().toString().trim();
                 phoneNumber = edtPhoneNumber.getText().toString().trim();
                 emailAddress = edtEmailAddress.getText().toString().trim();
 
+                intent.putExtra("username", username);
                 intent.putExtra("firstName", firstName);
                 intent.putExtra("lastName", lastName);
                 intent.putExtra("phoneNumber", phoneNumber);
@@ -66,11 +69,8 @@ public class SignupActivity extends AppCompatActivity {
                 intent.putExtra("password", enterPassword);
                 // End
 
-
-                intent.putExtra("loggedIn", true);
-
                 String id = databaseReference.push().getKey();
-                User user = new User(firstName, lastName, phoneNumber, emailAddress, enterPassword);
+                User user = new User(username, firstName, lastName, phoneNumber, emailAddress, enterPassword);
                 Task setValueTask = databaseReference.child("Users").child(id).setValue(user);
 
                 setValueTask.addOnSuccessListener(new OnSuccessListener() {

@@ -58,9 +58,6 @@ public class FindFoodActivity extends AppCompatActivity implements OnMapReadyCal
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_findfood);
 
-        Bundle bundle = getIntent().getExtras();
-
-
         fusedLocationProviderClient =
                 LocationServices.getFusedLocationProviderClient(this.getApplicationContext());
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
@@ -82,7 +79,6 @@ public class FindFoodActivity extends AppCompatActivity implements OnMapReadyCal
 
     public void toMain(View view) {
         Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("loggedIn", true);
         startActivity(intent);
     }
 
@@ -107,18 +103,10 @@ public class FindFoodActivity extends AppCompatActivity implements OnMapReadyCal
         LocationCallback locationCallback = new LocationCallback() {
             @Override
             public void onLocationResult(@NonNull LocationResult locationResult) {
-//                Toast.makeText(getApplicationContext(), "Location result is: "+ locationResult,
-//                        Toast.LENGTH_LONG).show();
-                if (locationResult == null) {
-//                    Toast.makeText(getApplicationContext(), "Current location is null",
-//                            Toast.LENGTH_LONG).show();
-                }
                 for(Location location: locationResult.getLocations()) {
                     if (location!=null) {
                         lat = location.getLatitude();
                         lng = location.getLongitude();
-//                        Toast.makeText(getApplicationContext(), "Current location is: "+ location.getLongitude(),
-//                                Toast.LENGTH_LONG).show();
                     }
 
                 }

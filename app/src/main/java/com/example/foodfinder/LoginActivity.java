@@ -38,12 +38,10 @@ public class LoginActivity extends AppCompatActivity {
         username = edtUsername.getText().toString().trim();
         password = edtPassword.getText().toString().trim();
 
-        Button toMain = findViewById(R.id.LoginBtn);
-        toMain.setOnClickListener(view -> {
-
+        Button loginBtn = findViewById(R.id.LoginBtn);
+        loginBtn.setOnClickListener(view -> {
             if (authenticateUser()) {
                 Intent intent = new Intent(this, MainActivity.class);
-                intent.putExtra("loggedIn", true);
                 startActivity(intent);
             }
         });
@@ -58,7 +56,6 @@ public class LoginActivity extends AppCompatActivity {
     protected boolean authenticateUser() {
         username = edtUsername.getText().toString().trim();
         password = edtPassword.getText().toString().trim();
-        boolean authMatch = false;
 
         if(TextUtils.isEmpty(username)) {
             Toast.makeText(this, "Please enter a username", Toast.LENGTH_LONG).show();
@@ -76,12 +73,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 System.out.println("Comparing " + username + " with ");
-                //boolean match = false;
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     User user = snapshot.getValue(User.class);
-                    String name = user.getFirstName() + " " + user.getLastName();
-                    System.out.println(name);
-                    if (username.equals(name)
+                    if (username.equals(user.getUsername())
                     && password.equals(user.getPassword())) {
                         match = true;
                         Toast.makeText(LoginActivity.this, "Access granted", Toast.LENGTH_LONG).show();

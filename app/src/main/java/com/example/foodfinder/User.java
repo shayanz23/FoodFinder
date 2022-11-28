@@ -2,14 +2,23 @@ package com.example.foodfinder;
 
 public class User {
 
-    private String firstName, lastName, phoneNumber, emailAddress, password;
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    private String username, firstName, lastName, phoneNumber, emailAddress, password;
 
     public User() {
 
     }
 
-    public User(String firstName, String lastName, String phoneNumber,
+    public User(String username, String firstName, String lastName, String phoneNumber,
                 String emailAddress, String password) {
+        this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;

@@ -16,7 +16,6 @@ public class RecentReviewsActivity extends AppCompatActivity {
 
     public void toMain(View view) {
         Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("loggedIn", true);
         startActivity(intent);
     }
 }

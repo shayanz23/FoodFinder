@@ -45,8 +45,32 @@
 
     <EditText
         android:layout_centerHorizontal="true"
-        android:id="@+id/phoneNumReg"
+        android:id="@+id/usernameReg"
+        android:layout_width="365dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/firstnameReg"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/username_reg"
+        android:inputType="textEmailAddress"
+        android:textColorHint="#757575" />
+
+    <EditText
+        android:layout_centerHorizontal="true"
+        android:id="@+id/emailReg"
+        android:layout_width="365dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/usernameReg"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/email_address"
+        android:inputType="textEmailAddress"
+        android:textColorHint="#757575" />
+
+    <EditText
+        android:layout_centerHorizontal="true"
+        android:id="@+id/phoneNumReg"
+        android:layout_below="@+id/emailReg"
         android:layout_width="365dp"
         android:layout_height="50dp"
         android:hint="@string/phone_number"
@@ -56,20 +80,8 @@
 
     <EditText
         android:layout_centerHorizontal="true"
-        android:id="@+id/emailReg"
-        android:layout_width="365dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/phoneNumReg"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/email_address"
-        android:inputType="textEmailAddress"
-        android:textColorHint="#757575" />
-
-    <EditText
-        android:layout_centerHorizontal="true"
         android:id="@+id/passwordReg"
-        android:layout_below="@+id/emailReg"
+        android:layout_below="@+id/phoneNumReg"
         android:layout_width="365dp"
         android:layout_height="50dp"
         android:autofillHints=""

@@ -31,6 +31,7 @@ public class RestaurantListFragment extends ListFragment {
         super.onCreate(savedInstanceState);
         restaurantNames = getResources().getStringArray(R.array.restaurants);
         if (getArguments() != null) {
+            Bundle bundle = getArguments();
             restaurants = getArguments().getStringArrayList("restaurants");
         }
     }
@@ -40,7 +41,7 @@ public class RestaurantListFragment extends ListFragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_restaurant_list, container, false);
         if (restaurants != null && !restaurants.isEmpty()) {
-            adapter = new ArrayAdapter<>(inflater.getContext(), android.R.layout.simple_list_item_1, (String[]) restaurants.toArray());
+            adapter = new ArrayAdapter<>(inflater.getContext(), android.R.layout.simple_list_item_1, restaurants);
         } else {
             adapter = new ArrayAdapter<>(inflater.getContext(), android.R.layout.simple_list_item_1, restaurantNames);
         }

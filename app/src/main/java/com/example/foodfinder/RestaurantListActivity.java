@@ -51,15 +51,6 @@ public class RestaurantListActivity extends AppCompatActivity {
         //Gets nearby restaurants.
 
 
-        Fragment restaurantListFragment = new RestaurantListFragment();
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        Bundle bundle = new Bundle();
-        bundle.putStringArrayList("restaurants" , restaurants);
-        restaurantListFragment.setArguments(bundle);
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.restaurantListFragment, restaurantListFragment);
-        fragmentTransaction.commit();
-
 
     }
 
@@ -81,11 +72,16 @@ public class RestaurantListActivity extends AppCompatActivity {
                     JSONObject getInfo = jsonArray.getJSONObject(i);
                     String name = getInfo.getString("name");
                     String vicinity = getInfo.getString("vicinity");
-                    Double rating = getInfo.getDouble("rating");
+                    double rating = 0;
+                    try {
+                        rating = getInfo.getDouble("rating");
+                    } catch (Exception e) {
+                    }
                     String string = name + "\n" +
                             "Vicinity: " +
-                            vicinity;
-                    if (rating != null) {
+                            vicinity + "\n" +
+                            "No Rating";
+                    if (rating != 0) {
                          string = name + "\n" +
                                 "Vicinity: " +
                                 vicinity + "\n" +
@@ -94,7 +90,14 @@ public class RestaurantListActivity extends AppCompatActivity {
                     }
                     restaurants.add(string);
                 }
-
+                Fragment restaurantListFragment = new RestaurantListFragment();
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                Bundle bundle = new Bundle();
+                bundle.putStringArrayList("restaurants" , restaurants);
+                restaurantListFragment.setArguments(bundle);
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.restaurantListFragment, restaurantListFragment);
+                fragmentTransaction.commit();
             } catch (JSONException e) {
                 e.printStackTrace();
             }

@@ -19,7 +19,8 @@
             android:layout_marginStart="55dp"
             android:contentDescription="@string/login"
             android:padding="10dp"
-            android:src="@drawable/search_svgrepo_com" />
+            android:src="@drawable/search_svgrepo_com"
+            android:onClick="toFindFood"/>
 
 
         <ImageView
@@ -39,7 +40,8 @@
             android:layout_marginEnd="55dp"
             android:contentDescription="@string/login"
             android:padding="5dp"
-            android:src="@drawable/profile" />
+            android:src="@drawable/profile"
+            android:onClick="toManageAccount"/>
     </GridLayout>
 
     <ImageView

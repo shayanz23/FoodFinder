@@ -20,4 +20,16 @@ public class RecentReviewsActivity extends AppCompatActivity {
         intent.putExtra("currentUser", currentUser);
         startActivity(intent);
     }
+
+    public void toFindFood(View view){
+        Intent intent = new Intent(this, RestaurantListActivity.class);
+        intent.putExtra("currentUser", currentUser);
+        startActivity(intent);
+    }
+
+    public void toManageAccount(View view){
+        Intent intent = new Intent(this, ManageAccountActivity.class);
+        intent.putExtra("currentUser", currentUser);
+        startActivity(intent);
+    }
 }

@@ -73,13 +73,10 @@ public class SignupActivity extends AppCompatActivity {
                 User user = new User(username, firstName, lastName, phoneNumber, emailAddress, enterPassword);
                 Task setValueTask = databaseReference.child("Users").child(id).setValue(user);
 
-                setValueTask.addOnSuccessListener(new OnSuccessListener() {
-                    @Override
-                    public void onSuccess(Object o) {
-                        Toast.makeText(SignupActivity.this, "Account created", Toast.LENGTH_LONG).show();
-                        intent.putExtra("currentUser", user);
-                        startActivity(intent);
-                    }
+                setValueTask.addOnSuccessListener(o -> {
+                    Toast.makeText(SignupActivity.this, "Account created", Toast.LENGTH_LONG).show();
+                    intent.putExtra("currentUser", user);
+                    startActivity(intent);
                 });
 
                 // add a failure listener to the task

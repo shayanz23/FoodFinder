@@ -66,12 +66,6 @@ public class RestaurantMapActivity extends AppCompatActivity implements OnMapRea
         getCurrentLocation();
     }
 
-    public void toMain(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("currentUser", currentUser);
-        startActivity(intent);
-    }
-
     public void getLocation(View view) {
 
     }
@@ -145,6 +139,24 @@ public class RestaurantMapActivity extends AppCompatActivity implements OnMapRea
                     getCurrentLocation();
                 }
         }
+    }
+
+    public void toMain(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("currentUser", currentUser);
+        startActivity(intent);
+    }
+
+    public void toFindFood(View view){
+        Intent intent = new Intent(this, RestaurantListActivity.class);
+        intent.putExtra("currentUser", currentUser);
+        startActivity(intent);
+    }
+
+    public void toManageAccount(View view){
+        Intent intent = new Intent(this, ManageAccountActivity.class);
+        intent.putExtra("currentUser", currentUser);
+        startActivity(intent);
     }
 
 }

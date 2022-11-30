@@ -73,6 +73,7 @@
             android:padding="10dp"
             android:src="@drawable/search_svgrepo_com"
             android:contentDescription="@string/login"
+            android:onClick="toFindFood"
             />
 
 
@@ -95,6 +96,7 @@
             android:layout_marginEnd="55dp"
             android:src="@drawable/profile"
             android:contentDescription="@string/login"
+            android:onClick="toManageAccount"
             />
     </GridLayout>
 

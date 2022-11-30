@@ -24,7 +24,7 @@ public class RestaurantFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            name = getArguments().getString("name");
+            name = getArguments().getString("restaurant");
         }
 
     }

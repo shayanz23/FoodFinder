@@ -8,15 +8,15 @@
 
     <TextView
         android:id="@+id/restaurantNameTextView"
-        android:layout_width="119dp"
-        android:layout_height="53dp"
-        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.147"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.15" />
 
     <Button
         android:id="@+id/button3"

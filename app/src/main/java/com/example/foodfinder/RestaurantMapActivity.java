@@ -38,12 +38,14 @@ public class RestaurantMapActivity extends AppCompatActivity implements OnMapRea
     public static final int QUALITY_BALANCED_POWER_ACCURACY = 102;
     private double lat,lng;
     private GoogleMap mMap;
+    private User currentUser;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_map);
+        currentUser = (User) getIntent().getSerializableExtra("currentUser");
 
         fusedLocationProviderClient =
                 LocationServices.getFusedLocationProviderClient(this.getApplicationContext());
@@ -66,6 +68,7 @@ public class RestaurantMapActivity extends AppCompatActivity implements OnMapRea
 
     public void toMain(View view) {
         Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("currentUser", currentUser);
         startActivity(intent);
     }
 

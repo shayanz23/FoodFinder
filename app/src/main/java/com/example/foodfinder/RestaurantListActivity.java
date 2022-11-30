@@ -127,6 +127,7 @@ public class RestaurantListActivity extends AppCompatActivity {
 
     public void toMap(View view) {
         Intent intent = new Intent(this, RestaurantMapActivity.class);
+        intent.putExtra("currentUser", currentUser);
         startActivity(intent);
     }
 

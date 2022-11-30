@@ -1,6 +1,5 @@
 package com.example.foodfinder;
 
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.ListFragment;
@@ -17,7 +16,7 @@ import java.util.ArrayList;
 public class RestaurantListFragment extends ListFragment {
 
     private RecyclerView recyclerView;
-    private String[] restaurantNames;
+    private String[] fillerRestaurantNames;
     private ArrayAdapter<String> adapter;
     private ArrayList<String> restaurants;
 
@@ -29,9 +28,8 @@ public class RestaurantListFragment extends ListFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        restaurantNames = getResources().getStringArray(R.array.restaurants);
+        fillerRestaurantNames = getResources().getStringArray(R.array.restaurants);
         if (getArguments() != null) {
-            Bundle bundle = getArguments();
             restaurants = getArguments().getStringArrayList("restaurants");
         }
     }
@@ -43,7 +41,7 @@ public class RestaurantListFragment extends ListFragment {
         if (restaurants != null && !restaurants.isEmpty()) {
             adapter = new ArrayAdapter<>(inflater.getContext(), android.R.layout.simple_list_item_1, restaurants);
         } else {
-            adapter = new ArrayAdapter<>(inflater.getContext(), android.R.layout.simple_list_item_1, restaurantNames);
+            adapter = new ArrayAdapter<>(inflater.getContext(), android.R.layout.simple_list_item_1, fillerRestaurantNames);
         }
 
         setListAdapter(adapter);
@@ -55,7 +53,11 @@ public class RestaurantListFragment extends ListFragment {
         //Toast.makeText(getActivity().getBaseContext(), restaurantNames[position] + " position " + position + " id " + id, Toast.LENGTH_SHORT).show();
         RestaurantFragment restaurantFragment = new RestaurantFragment();
         Bundle bundle = new Bundle();
-        bundle.putString("name", restaurantNames[position]);
+        if (restaurants == null) {
+            bundle.putString("restaurant", fillerRestaurantNames[position]);
+        } else {
+            bundle.putString("restaurant", restaurants.get(position));
+        }
         restaurantFragment.setArguments(bundle);
         getActivity().getSupportFragmentManager().beginTransaction()
                 .addToBackStack(null)

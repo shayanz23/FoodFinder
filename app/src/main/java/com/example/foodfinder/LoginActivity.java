@@ -22,6 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText edtUsername, edtPassword;
     private String username, password;
     private boolean match;
+    private User currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(view -> {
             if (authenticateUser()) {
                 Intent intent = new Intent(this, MainActivity.class);
+                intent.putExtra("currentUser", currentUser);
                 startActivity(intent);
             }
         });
@@ -79,6 +81,7 @@ public class LoginActivity extends AppCompatActivity {
                     && password.equals(user.getPassword())) {
                         match = true;
                         Toast.makeText(LoginActivity.this, "Access granted", Toast.LENGTH_LONG).show();
+                        currentUser = user;
                     }
                 }
                 if(!match) {

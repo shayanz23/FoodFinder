@@ -55,46 +55,21 @@
         tools:srcCompat="@tools:sample/avatars"
         android:contentDescription="@string/profilePic" />
 
-    <Button
-        android:id="@+id/editNameBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
-        android:text="@string/Edit"
-        app:layout_constraintBottom_toTopOf="@+id/editPhoneBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/accountName"
-        app:layout_constraintVertical_bias="0.607" />
-
     <TextView
-        android:id="@+id/userName"
+        android:id="@+id/nameManage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
         android:layout_marginBottom="40dp"
         android:text="@string/firstLastName"
         android:textSize="10pt"
-        app:layout_constraintBottom_toTopOf="@+id/phoneNumber"
-        app:layout_constraintEnd_toStartOf="@+id/editNameBtn"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toTopOf="@+id/phoneNumberManage"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/accountName"
+        app:layout_constraintTop_toBottomOf="@+id/usernameManage"
         app:layout_constraintVertical_bias="0.878" />
 
-    <Button
-        android:id="@+id/editEmailtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="120dp"
-        android:text="@string/Edit"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/emailAddress" />
-
     <TextView
-        android:id="@+id/emailAddress"
+        android:id="@+id/emailAddressManage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
@@ -105,30 +80,18 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/phoneNumber"
+        android:id="@+id/phoneNumberManage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
         android:layout_marginBottom="36dp"
         android:text="@string/phone_number"
         android:textSize="10pt"
-        app:layout_constraintBottom_toTopOf="@+id/emailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/emailAddressManage"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/editPhoneBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="52dp"
-        android:layout_marginBottom="28dp"
-        android:text="@string/Edit"
-        app:layout_constraintBottom_toTopOf="@+id/editEmailtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.866"
-        app:layout_constraintStart_toEndOf="@+id/phoneNumber" />
-
     <TextView
-        android:id="@+id/accountName"
+        android:id="@+id/usernameManage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/accName"
@@ -150,7 +113,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/accountName"
+        app:layout_constraintTop_toBottomOf="@+id/usernameManage"
         app:layout_constraintVertical_bias="0.925" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

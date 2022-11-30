@@ -57,5 +57,6 @@
     <string name="get_location">get Location</string>
     <string name="username_reg">Username</string>
     <string name="map">Map</string>
+    <string name="greeting">Hello</string>
 
 </resources>

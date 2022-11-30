@@ -16,9 +16,10 @@ import java.util.ArrayList;
 
 public class RestaurantListFragment extends ListFragment {
 
-    RecyclerView recyclerView;
-    String[] restaurantNames;
-    ArrayAdapter<String> adapter;
+    private RecyclerView recyclerView;
+    private String[] restaurantNames;
+    private ArrayAdapter<String> adapter;
+    private ArrayList<String> restaurants;
 
 
     public RestaurantListFragment() {
@@ -29,13 +30,21 @@ public class RestaurantListFragment extends ListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         restaurantNames = getResources().getStringArray(R.array.restaurants);
+        if (getArguments() != null) {
+            restaurants = getArguments().getStringArrayList("restaurants");
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_restaurant_list, container, false);
+        if (restaurants != null && !restaurants.isEmpty()) {
+            adapter = new ArrayAdapter<>(inflater.getContext(), android.R.layout.simple_list_item_1, (String[]) restaurants.toArray());
+        } else {
             adapter = new ArrayAdapter<>(inflater.getContext(), android.R.layout.simple_list_item_1, restaurantNames);
+        }
+
         setListAdapter(adapter);
         return view;
     }

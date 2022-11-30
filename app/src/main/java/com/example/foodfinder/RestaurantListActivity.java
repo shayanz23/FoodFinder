@@ -23,6 +23,7 @@ import com.google.android.gms.location.Priority;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.Task;
 
 import org.json.JSONArray;
@@ -37,6 +38,7 @@ public class RestaurantListActivity extends AppCompatActivity {
     private static final int request_code = 101;
     private double lat,lng;
     private ArrayList<String> restaurants;
+    private User currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,7 @@ public class RestaurantListActivity extends AppCompatActivity {
         fusedLocationProviderClient =
                 LocationServices.getFusedLocationProviderClient(this.getApplicationContext());
         getCurrentLocation();
+        currentUser = (User) getIntent().getSerializableExtra("currentUser");
         //Gets nearby restaurants.
 
 
@@ -76,11 +79,19 @@ public class RestaurantListActivity extends AppCompatActivity {
                 JSONArray jsonArray = jsonObject.getJSONArray("results");
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject getInfo = jsonArray.getJSONObject(i);
-                    String string = getInfo.getString("name") + "\n" +
+                    String name = getInfo.getString("name");
+                    String vicinity = getInfo.getString("vicinity");
+                    Double rating = getInfo.getDouble("rating");
+                    String string = name + "\n" +
                             "Vicinity: " +
-                            getInfo.getString("vicinity") + "\n" +
-                            "Rating: " +
-                            getInfo.getString("rating");
+                            vicinity;
+                    if (rating != null) {
+                         string = name + "\n" +
+                                "Vicinity: " +
+                                vicinity + "\n" +
+                                "Rating: " +
+                                rating;
+                    }
                     restaurants.add(string);
                 }
 
@@ -179,5 +190,11 @@ public class RestaurantListActivity extends AppCompatActivity {
                     getCurrentLocation();
                 }
         }
+    }
+
+    public void toMain(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("currentUser", currentUser);
+        startActivity(intent);
     }
 }
